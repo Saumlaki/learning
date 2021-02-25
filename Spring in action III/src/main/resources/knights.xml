@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Создание бина рыцаря - knight -->
+    <bean id = "knight" class="DIExample.FirstExample.BraveKnight">
+        <constructor-arg ref="quest"/>    <!--Внедрение компонента quest в knight(первый параметр конструктора) -->
+    </bean>
+
+    <!--Создание бина подвига - quest -->
+    <bean id = "quest" class="DIExample.FirstExample.SlayDragonQuest">
+    </bean>
+
+</beans>
