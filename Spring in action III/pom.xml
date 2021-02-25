@@ -23,6 +23,20 @@
             <version>5.3.3</version>
         </dependency>
 
+        <!-- Отвечает за AOP -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.3.3</version>
+        </dependency>
+
+        <!-- Отвечает за AOP -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.3.3</version>
+        </dependency>
+
 
     </dependencies>
 

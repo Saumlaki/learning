@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--Создание бина рыцаря - knight -->
+    <bean id = "knight" class="AOPExample.FirstExample.BraveKnight">
+        <constructor-arg ref="quest"/>    <!--Внедрение компонента quest в knight(первый параметр конструктора) -->
+    </bean>
+
+    <!--Создание бина подвига - quest -->
+    <bean id = "quest" class="AOPExample.FirstExample.SlayDragonQuest">
+    </bean>
+
+    <!--Создание бина менестреля - minstrel -->
+    <bean id = "minstrel" class="AOPExample.FirstExample.Minstrel">
+    </bean>
+
+
+    <!--AOP -->
+    <aop:config>
+        <aop:aspect ref="minstrel">
+            <!--Точка внедрения -->
+            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/><!--Только методы интерфейсов -->
+
+            <aop:before pointcut-ref="embark" method="singBeforeQuest"/>
+            <aop:after pointcut-ref="embark" method="singAfterQuest"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
