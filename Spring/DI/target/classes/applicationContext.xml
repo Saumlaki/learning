@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Добавление файлов настроек-->
+    <context:property-placeholder location="classpath:myApp.properties"/>
+
+    <!--Определение типа scope-->
+    <!--Прописываем ссылки на инит и дистрой методы-->
+    <bean id="myPet"
+          class="org.saumlaki.spring.spring_introdaction.Dog" scope="singleton"
+
+          init-method="init"
+          destroy-method="destroy"/>
+
+    <bean id="myPetProto"
+          class="org.saumlaki.spring.spring_introdaction.Dog" scope="prototype"/>
+
+    <bean id="myPerson"
+          class="org.saumlaki.spring.spring_introdaction.Person">
+
+        <!--Внедренеи зависимости через конструктор-->
+        <constructor-arg ref="myPet"/>
+        <!--Внедрение зависимости по сеттеру(для полей должен быть сеттер)-->
+        <property name="surname" value="Ivanov"/>
+        <property name="age" value="45"/>
+        <!--Внедрение зависимости по файлу пропертиес-->
+        <property name="name" value="${person.name}"/>
+        <property name="weight" value="${person.weight}"/>
+    </bean>
+</beans>
