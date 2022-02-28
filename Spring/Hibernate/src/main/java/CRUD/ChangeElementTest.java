@@ -1,3 +1,5 @@
+package CRUD;
+
 import entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

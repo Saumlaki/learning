@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
 <!--        Соединение с базой-->
-        <property name="connection.url">jdbc:sqlite:D:/GIt/Learning/Spring/Hibernate/src/main/resources/DB.sqlite</property>
+        <property name="connection.url">jdbc:sqlite:C:\Git\learning\Spring\Hibernate\src\main\resources\DB.sqlite</property>
 <!--        Драйвер для работы с базой-->
         <property name="connection.driver_class">org.sqlite.JDBC</property>
 <!--        Когда будем создавать сесию для работы с БД то эта сесия будет привязана к треду-->

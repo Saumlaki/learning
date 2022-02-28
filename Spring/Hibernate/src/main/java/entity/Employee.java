@@ -1,5 +1,8 @@
 package entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 //Данная аннотация указывает что класс связан с таблицей БД
@@ -7,19 +10,43 @@ import javax.persistence.*;
 @Table(name = "employees")
 public class Employee {
 
-
+    @Getter
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
+
+    @Setter
+    @Getter
     @Column(name = "name")
     private String name;
+
+    @Setter
+    @Getter
     @Column(name = "surname")
     private String surname;
+
+    @Setter
+    @Getter
     @Column(name = "department")
     private String department;
+
+    @Setter
+    @Getter
     @Column(name = "salary")
     private int salary;
+
+    @Setter
+    @Getter
+    @OneToOne(cascade = CascadeType.ALL) //Отношение 1 к одному
+    @JoinColumn(name = "details_id") //Указываем что соединение идет по колонке
+    private Details empDetails;
+
+    @Setter
+    @Getter
+    @OneToOne(cascade = CascadeType.ALL) //Отношение 1 к одному
+    @JoinColumn(name = "document_id") //Указываем что соединение идет по колонке
+    private Documents empDocument;
 
     public Employee() {
     }
@@ -40,45 +67,5 @@ public class Employee {
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
                 '}';
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
     }
 }
