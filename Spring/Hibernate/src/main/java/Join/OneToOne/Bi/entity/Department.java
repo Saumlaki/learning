@@ -1,4 +1,4 @@
-package Join.OneToMany.Bi.entity;
+package Join.OneToOne.Bi.entity;
 
 
 import lombok.Getter;
@@ -26,8 +26,10 @@ public class Department {
     //Отношение один ко многим
     //В одном департаменте много работников
     //Эту связь ищи в поле department_id является ключом таблицы employees
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
-    List<Employee> employeeList;
+    @Getter
+    @Setter
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "department")
+   Employee employee;
 
     public Department() {
     }
@@ -35,11 +37,5 @@ public class Department {
     public Department(String name) {
         this.name = name;
 
-    }
-
-    public void addEmployeeToDepartment(Employee employee) {
-        if (employeeList == null) employeeList = new ArrayList<>();
-        employeeList.add(employee);
-        employee.setDepartment(this);
     }
 }

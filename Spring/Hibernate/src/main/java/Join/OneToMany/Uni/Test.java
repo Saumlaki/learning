@@ -19,7 +19,7 @@ public class Test {
 
     public static void addElement() {
 
-        SessionFactory factory = new Configuration().configure("OneToManUniDirectional.cfg.xml")
+        SessionFactory factory = new Configuration().configure("cfg/OneToManyUniDirectional.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Department.class)
                 .buildSessionFactory();

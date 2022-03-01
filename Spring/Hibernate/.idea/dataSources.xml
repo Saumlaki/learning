@@ -8,18 +8,32 @@
       <jdbc-url>jdbc:sqlite:C:\Git\learning\Spring\Hibernate\src\main\resources\DB.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="OneToManUniDirectional.sqlite" uuid="51b6ec1f-968a-49be-8bfb-3e21b7db9b93">
+    <data-source source="LOCAL" name="OneToManyUniDirectional.sqlite" uuid="51b6ec1f-968a-49be-8bfb-3e21b7db9b93">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/OneToManUniDirectional.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/sqlite/OneToManyUniDirectional.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="OneToManBiDirectional.sqlite" uuid="41acb4b1-47dd-4ff8-be27-efa99568aa60">
+    <data-source source="LOCAL" name="OneToManyBiDirectional.sqlite" uuid="41acb4b1-47dd-4ff8-be27-efa99568aa60">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/OneToManBiDirectional.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/sqlite/OneToManyBiDirectional.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="OneToOneBiDirectional.sqlite" uuid="15cd37dd-11c2-4f38-9568-389ea559e1fd">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/sqlite/OneToOneBiDirectional.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="OneToOneUniDirectional.sqlite" uuid="e4440cf1-e9bb-4a3d-94ad-ecdff1a417ba">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/sqlite/OneToOneUniDirectional.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
