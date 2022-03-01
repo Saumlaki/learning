@@ -48,9 +48,9 @@ public class RemoveElementsTest {
     public static void removeElementForName(String name) {
 
         //Добавляем элементы, потом его их удалять
-        AddElementsTest.addElement(name, "Ivanov", "IT", 350);
-        AddElementsTest.addElement(name, "Petrov", "IT", 350);
-        AddElementsTest.addElement(name, "Sidorov", "IT", 350);
+        AddElementsTest.addElement(name, "Ivanov",  350);
+        AddElementsTest.addElement(name, "Petrov",  350);
+        AddElementsTest.addElement(name, "Sidorov",  350);
 
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).buildSessionFactory();
 

@@ -1,5 +1,6 @@
 package Join;
 
+import entity.Department;
 import entity.Details;
 import entity.Documents;
 import entity.Employee;
@@ -11,7 +12,7 @@ import org.hibernate.cfg.Configuration;
 /**
  * Тестовый класс для проверки добавления элементов со связью
  */
-public class OneToOneTest {
+public class JoinTest {
 
     public static void main(String[] args) {
 
@@ -26,12 +27,18 @@ public class OneToOneTest {
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Details.class)
                 .addAnnotatedClass(Documents.class)
+                .addAnnotatedClass(Department.class)
                 .buildSessionFactory();
 
         //Создаем объект который хотим сохранить
-        Employee employee = new Employee("Egor", "Sidorov", "IT", 1000);
+        Employee employee = new Employee("Egor", "Sidorov", 1000);
         Details details = new Details("Paris", "625 123 321", "int@mail.ru");
         Documents documents = new Documents("22332", employee);
+
+        Department itDepartment = new Department("It",5000, 100);
+
+        itDepartment.addEmployeeToDepartment(employee);
+
         employee.setEmpDetails(details);
         employee.setEmpDocument(documents);
         documents.setEmployee(employee);

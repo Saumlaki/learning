@@ -28,14 +28,10 @@ public class Employee {
 
     @Setter
     @Getter
-    @Column(name = "department")
-    private String department;
-
-    @Setter
-    @Getter
     @Column(name = "salary")
     private int salary;
 
+    //Связь 1 к 1
     @Setter
     @Getter
     @OneToOne(cascade = CascadeType.ALL) //Отношение 1 к одному
@@ -48,10 +44,17 @@ public class Employee {
     @JoinColumn(name = "document_id") //Указываем что соединение идет по колонке
     private Documents empDocument;
 
+    //Связь 1 ко многим
+    @Setter
+    @Getter
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id")
+    private Department department;//many to one, много работников могут работать в одном департаменте
+
     public Employee() {
     }
 
-    public Employee(String name, String surname, String department, int salary) {
+    public Employee(String name, String surname, int salary) {
         this.name = name;
         this.surname = surname;
         this.department = department;

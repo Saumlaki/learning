@@ -22,7 +22,7 @@ public class AddElementsTest {
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).buildSessionFactory();
 
         //Создаем объект который хотим сохранить
-        Employee employee = new Employee("Alexey", "Petrov2", "IT", 1000);
+        Employee employee = new Employee("Alexey", "Petrov2", 1000);
 
         //Сессия необходима для выполнения операции с БД
         //Кратко живущий объект
@@ -39,11 +39,11 @@ public class AddElementsTest {
         return employee;
     }
 
-    public static Employee addElement(String name, String surname, String department, int salary) {
+    public static Employee addElement(String name, String surname, int salary) {
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).buildSessionFactory();
 
         //Создаем объект который хотим сохранить
-        Employee employee = new Employee(name, surname, department, salary);
+        Employee employee = new Employee(name, surname, salary);
 
         //Сессия необходима для выполнения операции с БД
         //Кратко живущий объект
