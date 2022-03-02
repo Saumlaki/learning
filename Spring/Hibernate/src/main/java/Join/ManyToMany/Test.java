@@ -24,20 +24,6 @@ public class Test {
                 .addAnnotatedClass(Section.class)
                 .buildSessionFactory();
 
-        //Создаем объекты которые, хотим сохранить
-        Children children1 = new Children("Катя");
-        Children children2 = new Children("Маша");
-        Children children3 = new Children("Саша");
-
-        Section section1 = new Section("Бокс");
-        Section section2 = new Section("Плаванье");
-
-        section1.addChildren(children1);
-        section1.addChildren(children2);
-
-        children3.addSection(section1);
-        children3.addSection(section2);
-
         //Сессия необходима для выполнения операции с БД
         //Кратко живущий объект
         try (Session session = factory.getCurrentSession()) {
@@ -45,6 +31,25 @@ public class Test {
             //Сохраняем объект
             session.beginTransaction();
             System.out.println("-->Сохраняю детей и секции.");
+
+            //Создаем объекты которые, хотим сохранить
+            Children children1 = new Children("Катя");
+            Children children2 = new Children("Маша");
+            Children children3 = new Children("Саша");
+
+            session.save(children1);
+            session.save(children2);
+            session.save(children3);
+
+            Section section1 = new Section("Бокс");
+            Section section2 = new Section("Плаванье");
+
+            section1.addChildren(children1);
+            section1.addChildren(children2);
+
+            children3.addSection(section1);
+            children3.addSection(section2);
+
             session.save(section1);
             session.save(section2);
 
