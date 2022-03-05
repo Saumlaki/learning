@@ -3,7 +3,8 @@ package ru.saumlaki.spring;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.lang.annotation.Target;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Employee {
 
@@ -23,6 +24,27 @@ public class Employee {
     @Getter
     private String department;
 
+    @Setter
+    @Getter
+    private String country;
+
+    @Setter
+    @Getter
+    private String car;
+    
+    @Getter
+    @Setter
+    private String[] languages;
+
+    @Getter
+    @Setter
+    Map<String, String> countryMap;
+
     public Employee() {
+
+        countryMap = new HashMap<>();
+        countryMap.put("Россия", "Rus");
+        countryMap.put("Казахстан", "Kz");
     }
 }
+
