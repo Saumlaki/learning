@@ -35,6 +35,16 @@
             </td>
             <td style="background-color: #666666">
                 <form:input path="salary"/>
+                <form:errors path="salary"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Телефон: </label>
+            </td>
+            <td style="background-color: #666666">
+                <form:input path="telephone"/>
+                <form:errors path="telephone"/>
             </td>
         </tr>
             <%--            Пример с полем выбора--%>

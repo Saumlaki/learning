@@ -3,10 +3,7 @@ package ru.saumlaki.spring;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +21,8 @@ public class Employee {
 
     @Setter
     @Getter
+    @Min(value = 100, message = "Зарплата должна быть больше 100")
+    @Max(value = 10_000, message = "Зарплата должна быть меньше 10 000")
     private int salary;
 
     @Setter
@@ -37,6 +36,11 @@ public class Employee {
     @Setter
     @Getter
     private String car;
+
+    @Setter
+    @Getter
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Телефон должен быть в формате XXX-XX-XX")
+    private String telephone;
     
     @Getter
     @Setter

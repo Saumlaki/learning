@@ -18,6 +18,10 @@
         <td>${employee.department}</td>
     </tr>
     <tr>
+        <td>Вы ввели департамент:</td>
+        <td>${employee.telephone}</td>
+    </tr>
+    <tr>
         <td>Вы ввели страну:</td>
         <td>${employee.country}</td>
     </tr>
