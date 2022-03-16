@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "duke" class="ru.saumlaki.di.entity.Juggler"/>
+    <bean id = "musicSingle" class="ru.saumlaki.di.entity.MusicSingle"/>
+
+<!--    Инициализация через фабричный метод -->
+    <bean id = "scene" class="ru.saumlaki.di.entity.Scene" factory-method="getInstance"/>
+
+<!--    Внедрение зависимостей через конструктор 10 идет в первый параметр, 5 во второй и тд... Так же можно указывать имена параметров или их индексы-->
+    <bean id = "pit" class="ru.saumlaki.di.entity.Juggler">
+        <constructor-arg value="10"></constructor-arg>
+        <constructor-arg ref="musicSingle"></constructor-arg>
+        <constructor-arg ref="scene"></constructor-arg>
+    </bean>
+</beans>
