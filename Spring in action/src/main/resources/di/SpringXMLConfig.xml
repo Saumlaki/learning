@@ -1,18 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id = "duke" class="ru.saumlaki.di.entity.Juggler"/>
-    <bean id = "musicSingle" class="ru.saumlaki.di.entity.MusicSingle"/>
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-2.5.xsd"
+       default-init-method="remove"
+       default-destroy-method="print">
 
-<!--    Инициализация через фабричный метод -->
-    <bean id = "scene" class="ru.saumlaki.di.entity.Scene" factory-method="getInstance"/>
+    <!--    Самое простое объявление нового бина-->
+    <bean id="musicSingle" class="ru.saumlaki.di.entity.MusicSingle"/>
+    <bean id="musicSingle1" class="ru.saumlaki.di.entity.MusicSingle"/>
+    <bean id="musicSingle2" class="ru.saumlaki.di.entity.MusicSingle"/>
 
-<!--    Внедрение зависимостей через конструктор 10 идет в первый параметр, 5 во второй и тд... Так же можно указывать имена параметров или их индексы-->
-    <bean id = "pit" class="ru.saumlaki.di.entity.Juggler">
-        <constructor-arg value="10"></constructor-arg>
-        <constructor-arg ref="musicSingle"></constructor-arg>
-        <constructor-arg ref="scene"></constructor-arg>
+    <!--    Инициализация юина через фабричный метод -->
+    <bean id="scene" class="ru.saumlaki.di.entity.Scene" factory-method="getInstance"/>
+
+    <!--    Внедрение зависимостей через конструктор 10 идет в первый параметр, 5 во второй и тд... Так же можно указывать имена параметров или их индексы-->
+    <bean id="pit" class="ru.saumlaki.di.entity.Juggler">
+        <constructor-arg value="10"/>
+        <constructor-arg ref="musicSingle"/>
+        <constructor-arg ref="scene"/>
+    </bean>
+
+    <!--    Внедрение зависимостей через параметры-->
+    <bean id="sima" class="ru.saumlaki.di.entity.Juggler">
+        <property name="beanBags" value="10"/>
+        <property name="time" value="5"/>
+    </bean>
+
+    <!--    Данный пример демонстрирует пример в котором каждый раз создается новый билет-->
+    <bean id="ticket" class="ru.saumlaki.di.entity.Ticket" scope="prototype" init-method="print"
+          destroy-method="remove"/>
+
+    <!--    Использование внутренних компонентов-->
+    <bean id="viewer" class="ru.saumlaki.di.entity.Viewer" scope="prototype">
+        <property name="ticket">
+            <bean class="ru.saumlaki.di.entity.Ticket"/>
+        </property>
+    </bean>
+
+    <!--Использование коллекций-->
+    <bean id="listSinger" class="ru.saumlaki.di.entity.Singer">
+        <property name="list">
+            <list>
+                <ref bean="musicSingle"/>
+                <ref bean="musicSingle"/>
+                <ref bean="musicSingle"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="setSinger" class="ru.saumlaki.di.entity.Singer">
+        <property name="list">
+            <set>
+                <ref bean="musicSingle"/>
+                <ref bean="musicSingle1"/>
+                <ref bean="musicSingle2"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="mapSinger" class="ru.saumlaki.di.entity.Singer">
+        <property name="map">
+            <map>
+                <entry key="Гитара" value-ref="musicSingle"/>
+                <entry key="Барабан" value-ref="musicSingle1"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="propSinger" class="ru.saumlaki.di.entity.Singer">
+        <property name="prop">
+            <props>
+                <prop key="Гитара">Дзынь-Дзынь</prop>
+                <prop key="Барабан">Бум-Бум</prop>
+            </props>
+        </property>
+    </bean>
+
+        <!--    Внедрение пустого выражения-->
+        <bean id="elvis" class="ru.saumlaki.di.entity.Juggler">
+            <property name="beanBags">
+                <null/>
+            </property>
+            <property name="time" value="5"/>
+        </bean>
+
+    <!--    Примеры с использованием языка SpEL-->
+    <!--    Литералы-->
+    <bean id="patrik" class="ru.saumlaki.di.entity.Juggler">
+        <property name="beanBags" value="#{5}"/>
+        <property name="time" value="#{10}"/>
+    </bean>
+
+    <!--    Указанее бина -->
+    <bean id="lily" class="ru.saumlaki.di.entity.Juggler">
+        <constructor-arg name="beanBags" value="#{10}"/>
+        <constructor-arg name="singer" ref="#{musicSingle}"/>
+        <constructor-arg name="scene" ref="#{scene}"/>
+    </bean>
+
+    <!--    Получение значения из ранее определенного бина-->
+    <bean id="govard1" class="ru.saumlaki.di.entity.Juggler">
+        <property name="beanBags" value="#{patrik.beanBags}"/>
+        <property name="time" value="#{patrik.time + 2}"/>
+    </bean>
+
+    <!--    Доступ к статическим методам-->
+    <bean id="govard2" class="ru.saumlaki.di.entity.Juggler">
+        <property name="beanBags" value="#{T(Math).random()*100}"/>
+        <property name="time" value="#{patrik.time + 2}"/>
+    </bean>
+
+    <!--    Работа с регулярными выражениями-->
+    <bean id="govard3" class="ru.saumlaki.di.entity.Juggler">
+        <property name="beanBags" value="#{'into@mail.ru' matches '[A-Z@mail.ru]'}"/>
+        <property name="time" value="#{patrik.time + 2}"/>
+    </bean>
+
+    <!--    Пример со списком значений-->
+    <util:list id="ticketList">
+        <bean class="ru.saumlaki.di.entity.Ticket"/>
+        <bean class="ru.saumlaki.di.entity.Ticket"/>
+        <bean class="ru.saumlaki.di.entity.Ticket"/>
+        <bean class="ru.saumlaki.di.entity.Ticket"/>
+    </util:list>
+
+    <!--    Получение по индексу-->
+
+    <bean id="viewer1" class="ru.saumlaki.di.entity.Viewer">
+        <property name="ticket" value="#{ticketList[0]}"/>
+    </bean>
+
+    <bean id="viewer2" class="ru.saumlaki.di.entity.Viewer" scope="prototype">
+        <property name="ticket" value="#{ticketList[ticketList.size()]}"/>
+    </bean>
+
+    <!--    Пример с пропертями-->
+    <util:properties id="properties" location="di/example.properties"/>
+    <bean id="sima2" class="ru.saumlaki.di.entity.Juggler">
+        <property name="beanBags" value="#{properties.beanBags}"/>
+        <property name="time" value="#{properties.time}"/>
     </bean>
 </beans>
+
+
+

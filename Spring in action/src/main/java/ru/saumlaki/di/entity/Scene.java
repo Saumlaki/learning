@@ -1,5 +1,8 @@
 package ru.saumlaki.di.entity;
 
+/**
+ * Класс описывает сцену. Сцена является singleton поэтому ее инициализация происходит через factory-method
+ */
 public class Scene {
 
     private static Scene scene;
@@ -8,8 +11,8 @@ public class Scene {
     }
 
     public static Scene getInstance() {
-        if(scene==null) scene = new Scene();
+        if (scene == null) scene = new Scene();
 
-        return  scene;
+        return scene;
     }
 }
