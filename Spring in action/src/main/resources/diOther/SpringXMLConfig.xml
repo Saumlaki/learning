@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:contex="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <aop:annotation-config/>
+    <contex:component-scan base-package="diOther"/>
+
+<!--    Подключение настроек-->
+    <util:properties id="properties" location="diOther/example.properties"/>
+
+    <bean id="dog" class="ru.saumlaki.diOther.Dog">
+        <constructor-arg name="name" value="Бублик"/>
+        <qualifier value="q1"/>
+    </bean>
+
+    <bean id="charli" class="ru.saumlaki.diOther.Dog">
+        <constructor-arg name="name" value="Чарли"/>
+        <qualifier value="q2"/>
+    </bean>
+
+    <bean id="age" class="java.lang.Integer">
+        <constructor-arg name="value" value="50"/>
+    </bean>
+
+    <bean id="man" class="ru.saumlaki.diOther.Man" autowire="constructor">
+    </bean>
+
+    <bean id="myDog" class="ru.saumlaki.diOther.Dog">
+<!--        <constructor-arg name="name" value="#{properties.dogName}"/>-->
+    </bean>
+</beans>
+
+
+

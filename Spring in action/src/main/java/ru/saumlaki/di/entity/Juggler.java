@@ -1,7 +1,5 @@
 package ru.saumlaki.di.entity;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 import ru.saumlaki.di.entity.interfaces.Performer;
 import ru.saumlaki.di.entity.interfaces.Singer;
 
@@ -10,10 +8,11 @@ import ru.saumlaki.di.entity.interfaces.Singer;
  */
 public class Juggler implements Performer {
 
-    private int beanBags = 3;
-    private int time = 1;
-    private Singer singer;
-    private Scene scene;
+    public int beanBags = 3;
+    public int time = 1;
+    public Singer singer;
+    public Scene scene;
+    public boolean isEmailConform;
 
     public Juggler() {
     }
@@ -36,5 +35,13 @@ public class Juggler implements Performer {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public void setEmailConform(boolean emailConform) {
+        isEmailConform = emailConform;
+    }
+
+    public void setSinger(Singer singer) {
+        this.singer = singer;
     }
 }

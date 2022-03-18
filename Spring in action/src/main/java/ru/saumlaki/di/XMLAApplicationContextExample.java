@@ -9,9 +9,6 @@ public class XMLAApplicationContextExample {
     public static void main(String[] args) {
         ApplicationContext context= new ClassPathXmlApplicationContext("di/SpringXMLConfig.xml");
 
-        Performer performerDuke = (Juggler) context.getBean("duke");
-        performerDuke.perform();
-
         Performer performerPit = (Juggler) context.getBean("pit");
         performerPit.perform();
 

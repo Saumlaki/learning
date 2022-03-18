@@ -10,19 +10,31 @@
        default-init-method="remove"
        default-destroy-method="print">
 
-    <!--    Самое простое объявление нового бина-->
+    <!--    ****************************************-->
+    <!--    ПРОСТОЕ ОБЪЯВЛЕНИЕ БИНОВ-->
+
     <bean id="musicSingle" class="ru.saumlaki.di.entity.MusicSingle"/>
     <bean id="musicSingle1" class="ru.saumlaki.di.entity.MusicSingle"/>
     <bean id="musicSingle2" class="ru.saumlaki.di.entity.MusicSingle"/>
 
-    <!--    Инициализация юина через фабричный метод -->
+    <!--    ****************************************-->
+    <!--    РАЗЛИЧНЫЕ МЕТОДЫ ИНИЦИАЛИЗАЦИИ-->
+
+    <!--    Инициализация бина через фабричный метод -->
     <bean id="scene" class="ru.saumlaki.di.entity.Scene" factory-method="getInstance"/>
 
-    <!--    Внедрение зависимостей через конструктор 10 идет в первый параметр, 5 во второй и тд... Так же можно указывать имена параметров или их индексы-->
+    <!--    ****************************************-->
+    <!--    ВНЕДРЕНИЕ ПАРАМТЕРОВ-->
+
+    <!--    Внедрение зависимостей через конструктор 10 идет в первый параметр, 5 во второй и тд...
+    Так же можно указывать имена параметров или их индексы-->
     <bean id="pit" class="ru.saumlaki.di.entity.Juggler">
         <constructor-arg value="10"/>
         <constructor-arg ref="musicSingle"/>
         <constructor-arg ref="scene"/>
+    </bean>
+    <!--Использование p-простанства имен-->
+    <bean id="pitP" class="ru.saumlaki.di.entity.Juggler" p:beanBags="10" p:time="5">
     </bean>
 
     <!--    Внедрение зависимостей через параметры-->
@@ -31,9 +43,22 @@
         <property name="time" value="5"/>
     </bean>
 
+    <!--    Внедрение пустого выражения-->
+    <bean id="viewer3" class="ru.saumlaki.di.entity.Viewer" scope="prototype">
+        <property name="ticket">
+            <null></null>
+        </property>
+    </bean>
+
+    <!--    ****************************************-->
+    <!--    ОПРЕДЕЛЕНИЕ ТИПА БИНА(синглтон)-->
+
     <!--    Данный пример демонстрирует пример в котором каждый раз создается новый билет-->
     <bean id="ticket" class="ru.saumlaki.di.entity.Ticket" scope="prototype" init-method="print"
           destroy-method="remove"/>
+
+    <!--    ****************************************-->
+    <!--    ВНУТРЕННИЕ КОМПОНЕНТЫ-->
 
     <!--    Использование внутренних компонентов-->
     <bean id="viewer" class="ru.saumlaki.di.entity.Viewer" scope="prototype">
@@ -42,7 +67,10 @@
         </property>
     </bean>
 
-    <!--Использование коллекций-->
+    <!--    ****************************************-->
+    <!--    КОЛЛЕКЦИИ-->
+
+    <!--Использование коллекций - list-->
     <bean id="listSinger" class="ru.saumlaki.di.entity.Singer">
         <property name="list">
             <list>
@@ -53,6 +81,7 @@
         </property>
     </bean>
 
+    <!--Использование коллекций - set-->
     <bean id="setSinger" class="ru.saumlaki.di.entity.Singer">
         <property name="list">
             <set>
@@ -63,6 +92,7 @@
         </property>
     </bean>
 
+    <!--Использование коллекций - map-->
     <bean id="mapSinger" class="ru.saumlaki.di.entity.Singer">
         <property name="map">
             <map>
@@ -72,6 +102,7 @@
         </property>
     </bean>
 
+    <!--Использование коллекций - props-->
     <bean id="propSinger" class="ru.saumlaki.di.entity.Singer">
         <property name="prop">
             <props>
@@ -81,28 +112,23 @@
         </property>
     </bean>
 
-    <!--    &lt;!&ndash;    Внедрение пустого выражения&ndash;&gt;-->
-    <!--    <bean id="elvis" class="ru.saumlaki.di.entity.Juggler">-->
-    <!--        <property name="beanBags">-->
-    <!--            <null/>-->
-    <!--        </property>-->
-    <!--        <property name="time" value="5"/>-->
-    <!--    </bean>-->
+    <!--    ****************************************-->
+    <!--    SpEL-->
 
-
-    <!--    Примеры с использованием языка SpEL-->
     <!--    Литералы-->
     <bean id="patrik" class="ru.saumlaki.di.entity.Juggler">
         <property name="beanBags" value="#{5}"/>
         <property name="time" value="#{10}"/>
     </bean>
 
-<!--    &lt;!&ndash;    Указанее бина &ndash;&gt;-->
-<!--    <bean id="lily" class="ru.saumlaki.di.entity.Juggler">-->
-<!--        <constructor-arg name="beanBags" value="#{10}"/>-->
-<!--        <constructor-arg name="singer" ref="#{musicSingle1}"/>-->
-<!--        <constructor-arg name="scene" ref="#{scene}"/>-->
-<!--    </bean>-->
+    <!--    Указание бина. Почему-то не работает, не могу разобраться -->
+    <bean id ="lilySinger" class="ru.saumlaki.di.entity.Singer"/>
+
+    <bean id="lily" class="ru.saumlaki.di.entity.Juggler">
+        <constructor-arg name="beanBags" value="#{10}"/>
+        <constructor-arg name="singer" ref="#{lilySinger}"/>
+        <constructor-arg name="scene" ref="#{scene}"/>
+    </bean>
 
     <!--    Получение значения из ранее определенного бина-->
     <bean id="govard1" class="ru.saumlaki.di.entity.Juggler">
@@ -118,7 +144,7 @@
 
     <!--    Работа с регулярными выражениями-->
     <bean id="govard3" class="ru.saumlaki.di.entity.Juggler">
-        <property name="beanBags" value="#{'into@mail.ru' matches '[A-Z@mail.ru]'}"/>
+        <property name="emailConform" value="#{'into@mail.ru' matches '[A-Z@mail.ru]'}"/>
         <property name="time" value="#{patrik.time + 2}"/>
     </bean>
 
@@ -131,11 +157,11 @@
     </util:list>
 
     <!--    Получение по индексу-->
-
     <bean id="viewer1" class="ru.saumlaki.di.entity.Viewer">
         <property name="ticket" value="#{ticketList[0]}"/>
     </bean>
 
+    <!--    Получение размера списка-->
     <bean id="viewer2" class="ru.saumlaki.di.entity.Viewer" scope="prototype">
         <property name="ticket" value="#{ticketList[ticketList.size()]}"/>
     </bean>
