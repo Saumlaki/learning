@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Домашняя работа 6</title>
+    <meta http-equiv="content-type" content="text/html" ; charset="UTF-8">
+    <meta name="keywords" content="ДЗ, Домашняя работа, сделал сам, практика">
+    <meta name="description" content="Домашняя работа 6">
+    <link rel="shortcut icon" type="image/png" href="../icon/favicon.png">
+</head>
+
+<body>
+    <form action="/sendOrder" method="get" >
+        <fieldset>
+            <legend>Личные данные</legend>
+            <p><label>Имя: </label><input type="text" name="name"></p>
+            <p><label>e-mail: </label><input type="e-mail"></p>
+            <p><label>Логин: </label><input type="text"></p>
+            <p><label>Пароль: </label><input type="password"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend> Доставка</legend>
+            <p><label>Адрес: </label><input type="text"></p>
+            <p><label>Способ доставки: </label><input type="e-mail" list="dostavka">
+                <datalist id="dostavka">
+                    <option>Самовывоз</option>
+                    <option>Почта Росии</option>
+                    <option>СДЕК</option>
+                </datalist></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Способы оплаты</legend>
+            <label for="rb1">Наличными</label>
+            <input type="radio" id="rb1" name="pay">
+
+            <label for="rb2">Картой</label>
+            <input type="radio" id="rb2" name="pay">
+
+            <label for="rb3">Веткой</label>
+            <input type="radio" id="rb3" name="pay">
+        </fieldset>
+
+        <fieldset>
+            <legend>Уведомления</legend>
+            <label for="ch1">Позвонить за час</label>
+            <input type="checkbox" id="ch1" name="pay">
+
+            <label for="ch2">Отправить трек номер</label>
+            <input type="checkbox" id="ch2" name="pay">
+
+            <label for="ch3">Отправить</label>
+            <input type="submit" id="submit">
+
+            <label for="ch3">Сбросить</label>
+            <input type="reset" id="reset">
+        </fieldset>
+    </form>
+</body>
+
+</html>

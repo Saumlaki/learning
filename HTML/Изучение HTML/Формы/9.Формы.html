@@ -68,7 +68,19 @@
                 <td><input type="number" name="numberField" min="0" max="30" /></td>
             </tr>
             <tr>
-                <td>Пример поля ввода text </td>
+                <td>Пример поля ввода text(простое) </td>
+                <td><input type="text" name="textField1" /></td>
+            </tr>
+            <tr>
+                <td>Пример поля ввода text(заблокировано) </td>
+                <td><input type="text" name="textField2" disabled value="Поле заблокировано"/></td>
+            </tr>
+            <tr>
+                <td>Пример поля ввода text(только чтение) </td>
+                <td><input type="text" name="textField3" readonly value="Поле только для чтения"/></td>
+            </tr>
+            <tr>
+                <td>Пример поля ввода text(список выбора) </td>
                 <td><input type="text" name="textField" list="some_my_text" />
                     <datalist id="some_my_text">
                         <option>Я могу ввести этот текст</option>
@@ -82,16 +94,30 @@
                 <td><textarea name="textArea"></textarea></td>
             </tr>
             <tr>
-                <td>Пример поля ввода select </td>
-                <td><select name="goods">
+                <td>Пример поля ввода select1 </td>
+                <td><select name="goods1">
                         <optgroup label="Минимальные значения">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
-                            <option>4</option>
                         </optgroup>
                         <optgroup label="Оптимальные значения">
-                            <option>5</option>
+                            <option selected>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                        </optgroup>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Пример поля ввода select2 </td>
+                <td><select name="goods2" size="4">
+                        <optgroup label="Минимальные значения">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </optgroup>
+                        <optgroup label="Оптимальные значения">
+                            <option selected>5</option>
                             <option>6</option>
                             <option>7</option>
                         </optgroup>
@@ -115,7 +141,7 @@
             </tr>
             <tr>
                 <td>Пример поля ввода button </td>
-                <td><input type="button" /></td>
+                <td><input type="button" value="Просто кнопка" /></td>
             </tr>
             <tr>
                 <td>Пример поля ввода checkbox </td>
@@ -131,7 +157,7 @@
                     </p>
                     <p>
                         <label for="ch3" >Вариант 3</label>
-                        <input type="checkbox"  id="ch3"/>
+                        <input type="checkbox"  id="ch3" checked/>
                     </p>
                 </td>
             </tr>
@@ -146,4 +172,25 @@
     </form>
 </body>
 
+<fieldset>
+    <legend>Учетные данне</legend>
+    
+     <label for="textField5">Поле 1</label>
+        <input type="text" name="textField5" />
+     
+        <label for="textField6">Поле 2</label>
+        <input type="text" name="textField6" />
+  
+</fieldset>
+
+<fieldset>
+    <legend>Дополнительно</legend>
+      
+    <label for="textField7">Поле 1</label>
+    <input type="text" name="textField5" />
+ 
+    <label for="textField8">Поле 2</label>
+    <input type="text" name="textField6" />
+
+</fieldset>
 </html>
