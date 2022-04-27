@@ -18,7 +18,7 @@
    /**Тень*/
     text-shadow: 3px 3px 5px green;
     /**Закглавный или маленький текст*/
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
 }
 
 .p2 {
