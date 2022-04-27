@@ -1,0 +1,17 @@
+p.p1 {
+  border: 1px solid red;
+  border-left: 6px solid green;
+}
+
+span.span1 {
+    border: 1px solid red;
+}
+div.div1{
+    border:1px solid;
+    width: 500px;
+    height: 100px;
+    border-radius: 20px 20px 5px 5px;
+    padding: 30px;/**Отступ внутри элемента*/
+    box-sizing: border-box;/*Что бы padding не изменял ширину блока*/
+    margin: 25px;/*Отчтуп с наружи юлока*/
+}

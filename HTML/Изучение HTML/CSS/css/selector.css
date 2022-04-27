@@ -1,0 +1,22 @@
+input[type="text"]{
+    color: red;
+}
+.form1 input[type="text"]{
+    color: blueviolet;
+}
+
+div p{
+    color: blue;
+}
+.block > p{
+    color:orange;
+    font-size: 25px;
+}
+
+.comb1 p+span{
+    color:orange
+}
+
+.comb2 p~ span{
+    color:blue
+}
