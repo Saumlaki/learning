@@ -1,0 +1,13 @@
+.b1{
+    width: 250px;
+    height: 250px;
+    background: url("../image/ChangeElement.png");
+}
+
+.b2{
+    width: 250px;
+    height: 250px;
+    background: url("../image/ChangeElement.png") no-repeat, red;
+    box-shadow: 5px 5px 4px 5px rgb(0, 0, 0, 0.5);
+    box-shadow: inset 5px 5px 4px 5px rgb(0, 0, 0, 0.5);
+}
