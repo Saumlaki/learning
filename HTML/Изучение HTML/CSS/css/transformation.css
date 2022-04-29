@@ -1,0 +1,26 @@
+div{
+    margin: 0 auto;
+}
+.grad1{
+    border: 1 solid;
+    background-color: red;
+    width: 150px;
+    height: 150px;
+}
+
+.grad2{
+    border: 1 solid;
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+    transform: rotate(50deg);
+    transform-origin:right top;
+}
+.grad3{
+    border: 1 solid;
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+    transform: translate(40px,100px);
+
+}
