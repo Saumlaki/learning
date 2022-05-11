@@ -1,0 +1,14 @@
+.ul{
+  
+    color: red;
+}
+
+.ul li::before{
+  content: "sdsd";
+
+}
+
+.ul:focus{
+color: green;
+  
+  }
