@@ -1,0 +1,121 @@
+
+/*Убираем обводку поля воода*/
+.form1 input{
+    outline: none;
+    transition: 1s;
+    width: 200px;
+}
+
+/*Пример с :focus*/
+.form1 input:focus{
+    border: 2px red solid;
+    width: 300px;
+}
+
+
+/*Пример с :chesked */
+.form2 input:checked + label{
+    color: red;
+}
+
+/*Пример с :chesked */
+.form2 input:checked ~ label{
+    color: red;
+}
+
+/*Пример с :link */
+a:link{
+    color: yellowgreen;
+}
+
+a:visited{
+    color: red;
+}
+
+/*Пример с :activ */
+.div1{
+    width: 150px;
+    height: 150px;
+    border: 1px, solid red;
+    background: red;
+    transition: 1s;
+}
+
+.div1:active{
+    width: 250px;
+    height: 250px;
+    border: 1px, solid green;
+    background: green;
+}
+
+/*Пример с :disabled и  :enabled*/
+.form3 input:disabled{
+    border: 2px solid orange;
+
+}
+
+.form3 input:enabled{
+    border: 2px solid green;
+}
+
+/*Пример с :not*/
+.div2 p:not(.p2){
+    color:red
+}
+
+/*Пример с псевдоклассами отношений*/
+.div3 p:first-child{
+    color: red;
+}
+.div3 p:last-child{
+    color: blue;
+}
+.div3 p:nth-child(4){
+    color: yellow;
+}
+/*Каждый 3-ый*/
+.div3 p:nth-child(3n){
+    color: pink;
+}
+/*Каждый 3-ый плюс сдвиг на 1*/
+.div3 p:nth-child(3n+1){
+    color: orange;
+}
+/*Каждый c 6 и до конца*/
+.div3 p:nth-child(n+6){
+    color: orange;
+}
+/*Каждый все до 6-го*/
+.div3 p:nth-child(-n+6){
+    color: orange;
+}
+/*Пример псевдо элемента first-letter*/
+.div4 p::first-letter{
+    color: red;
+    font-size: 30px;
+    font-weight:  bold;
+}
+/*Пример псевдо элемента first-line*/
+.div5 p::first-line{
+    color: red;
+    font-size: 30px;
+    font-weight:  bold;
+}
+
+/*Пример псевдо элемента first-line*/
+.div6 p:before{
+content: "Это вставленное before. ";
+}
+.div6 p::after{
+    content: "ХИТ! ";
+    display: inline-block;
+    width: 40px;
+    height: 15px;
+    padding: 5px;
+    margin: 3 px;
+    border-radius: 3px;
+    background-color: orange;
+}
+.div7 p::before{
+    content: 	"\260F ";
+}

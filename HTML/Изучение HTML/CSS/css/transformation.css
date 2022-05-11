@@ -13,14 +13,47 @@ div{
     background-color: blue;
     width: 150px;
     height: 150px;
-    transform: rotate(50deg);
-    transform-origin:right top;
+    transition: 1s;
 }
-.grad3{
+
+.grad2:hover{
     border: 1 solid;
     background-color: blue;
     width: 150px;
     height: 150px;
+    transform: rotate(50deg);
+   /* transform-origin:right top;*/
+}
+
+.grad3{
+    border: 1 solid;
+    background-color: orange;
+    width: 150px;
+    height: 150px;
     transform: translate(40px,100px);
 
+}
+
+.grad4{
+    border: 1 solid;
+    background-color: purple;
+    width: 150px;
+    height: 150px;
+transition: 1s;
+}
+
+.grad4:hover{
+    border: 1 solid;
+    background-color: purple;
+    width: 150px;
+    height: 150px;
+    transform: scale(1.5);
+}
+
+.grad5{
+    border: 1 solid;
+    background-color: green;
+    width: 150px;
+    height: 150px;
+    transform: skew(5deg, 10deg);
 }
