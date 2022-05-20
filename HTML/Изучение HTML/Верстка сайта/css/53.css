@@ -1,0 +1,15 @@
+.block1 {
+    height: 500px;
+    border: 1px solid;
+    
+    display: flex;
+  /*  flex-direction: ;*Выравнивает внутрение элементы элементы*/
+  justify-content: center;/*Выравнивание по горизонту*/
+  align-items: center;/*Выравнивание по вертикали*/
+  flex
+justify-content: space-around;
+}
+
+.block1 div {
+    border: 1px solid;
+}
