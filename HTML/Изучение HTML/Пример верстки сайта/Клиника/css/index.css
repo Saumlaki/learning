@@ -147,13 +147,13 @@ header nav ul li a {
 .content {
   display: flex;
   justify-content: space-between;
-  border: 1px solid white;
+
 }
 
 .content .content_left {
   flex-basis: 30%;
-  /*Ширина*/
-  border: 1px solid white;
+
+
 }
 
 .content .content_left section {
@@ -191,7 +191,7 @@ header nav ul li a {
 .content .content_right {
   flex-basis: 69%;
   /*Ширина*/
-  border: 1px solid white;
+
 }
 
 .content .content_left article p {
@@ -207,12 +207,12 @@ header nav ul li a {
 /*Нижний банер*/
 /*.content .content_left */
 .content_left .bottom {
-  background: url("../images/mini-banner.png") no-repeat right 5%, linear-gradient(to bottom right,#bbdb8d, #fff);
-  border: 1px solid #fff;
+  background: url("../images/mini-banner.png") no-repeat right 5%, linear-gradient(to bottom right, #bbdb8d, #fff);
+
   padding: 35px 0;
   margin-top: 10px;
   display: flex;
-  justify-content:space-around ;
+  justify-content: space-around;
 }
 
 .content_left .bottom .left p {
@@ -222,52 +222,213 @@ header nav ul li a {
   margin: 0;
 }
 
-.content_left .bottom .left p:last-child{
-  margin-left: 25px;/*Отодвигаем от края*/
+.content_left .bottom .left p:last-child {
+  margin-left: 25px;
+  /*Отодвигаем от края*/
 }
 
-.content_left .bottom .left span{
- font-size: 20px;
- color: #4c790d;
+.content_left .bottom .left span {
+  font-size: 20px;
+  color: #4c790d;
 }
 
-.content_left .bottom .right p{
+.content_left .bottom .right p {
   color: #fff;
   font-size: 45px;
   margin: 0;
   font-weight: bold;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
 }
+
 /****************************************************/
 /*ПРАВЫЙ БЛОК*/
-.content_right{
+.content_right {
   display: flex;
   flex-direction: column;
+  /*Переворачиваем бокс. Сохраняеться поведение флекс бокса*/
   flex-basis: 69%;
+  /**/
   justify-content: space-between;
+  /*Центрируем элементы по горизонтали, но так как мы перевернули их то по вертикали*/
 
 }
 
 
-.content_right .top{
+.content_right .top {
   background: linear-gradient(#71ae18, #598715);
   flex-basis: 31%;
   padding: 15px;
-  
-
+  position: relative;
+  box-sizing: border-box;
 }
 
-.content_right .top h2{
+.content_right .top h2 {
   color: #fff;
   font-size: 20px;
   margin: 5px 0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) ;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
-.content_right .bottom{
-border: 1px solid red;
+
+.content_right .top p {
+  color: #fff;
+  line-height: 25px;
 
 }
 
+.content_right .top a {
+  color: #c8d427;
+  font-weight: bold;
+  /*:Жирный шрифт*/
+  text-decoration: none;
+  /*Убираем подчеркивание*/
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.content_right .top a::before {
+
+  content: "\003E";
+  margin-right: 4px;
+  border: 2px solid #c8d427;
+  padding: 0 3px;
+  background: #a49c00;
+}
+
+
+
+.bottom_side {
+  background: linear-gradient(#626840, #596459);
+  padding: 15px;
+  ;
+}
+
+/***********************************************************
+/ПРАВАЯ ЧАСТЬ САЙТА
+/.content_right
+/***********************************************************/
+.content_right .bottom {
+  flex-basis: 67%;
+  background: linear-gradient(#d7e0d3, #d6e1d2);
+  padding: 10px;
+  /*Внутренний отступ*/
+  box-sizing: border-box;
+  position: relative;
+}
+
+.content_right .bottom h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  background: #4a7808;
+  margin: 0;
+  padding: 10px 10px 8px;
+}
+
+.content_right .bottom .news {
+  display: flex;
+  justify-content: space-around;
+  /*Выравнивание по горизонтали*/
+  margin-top: 30px;
+}
+
+.content_right .bottom .news img {
+  border: 2px solid #9baba8;
+}
+
+.content_right .bottom .news .description {
+  flex-basis: 60%;
+}
+
+.content_right .bottom .news_links a {
+  display: block;
+  text-decoration: none;
+  margin: 5px 0;
+  color: #4b7c0c;
+}
+
+.content_right .bottom .news_links {
+  width: 80%;
+  margin: 40px auto 0;
+}
+
+.content_right .bottom .news_links a:hover {
+  text-decoration: underline;
+}
+
+.content_right .bottom .news_links a::before {
+  content: "\00BB";
+  margin-right: 10px;
+}
+
+.content_right .bottom>a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+
+.content_right .bottom>a::before {
+  content: "\003E";
+  margin-right: 10px;
+  border: 2px solid #50721d;
+  padding: 0 3px;
+  background: #77aa27;
+}
+
+/***********************************************************
+/ПОДВАЛ САЙТА
+/.
+/***********************************************************/
+footer {
+  margin-top: 15px;
+}
+
+footer ul {
+  display: flex;
+  background: linear-gradient(#629a13, #558022);
+  margin: 0;
+  padding: 15px 0;
+  margin-top: 15px;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+footer ul li {
+
+  list-style-type: none;
+  border-right: 1px solid #d1fb4a;
+  padding: 0 20px;
+}
+
+
+footer ul li:last-child {
+  border: none;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #d1fb4a;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  color: #fff;
+  margin: 20px 0 0;
+  text-align: center;
+}
+
+
+/*ТЕГИ*/
 /*
- padding: 15px; - внутренний отступ
+padding - Внутренний отступ
+  box-sizing: border-box; - Возвращает размер блока послу  установки падинга и маргина
 */
