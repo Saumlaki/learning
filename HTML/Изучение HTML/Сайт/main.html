@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Задачи</title>
+    <meta http-equiv="content-type" content="text/html" ; charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="holder">
+        <p>Список задач</p>
+    </div>
+    <div class="container">
+        <div class="fast_filter">
+            <h3>Задачи по дням</h3>
+            <hr />
+            <form class="data_filter">
+                <button type="button">Все <span>100</span></button>
+            </form>
+            <form class="data_filter">
+                <button type="button">Сегодня <span>5</span></button>
+            </form>
+            <form class="data_filter">
+                <button type="button">Вчера <span>5</span></button>
+            </form>
+            <form class="data_filter">
+                <button type="button">На этой недели <span>20</span></button>
+            </form>
+            <form class="data_filter">
+                <button type="button">В этом месяце <span>50</span></button>
+            </form>
+            <form class="data_filter">
+                <button type="button">В этом году <span>100</span></button>
+            </form>
+
+            <form class="data_filter">
+                <p>Период</p>
+                <input type="date" placeholder="Период с">
+                <input type="date" placeholder="Период с">
+            </form>
+
+            <div class="status_filter">
+                <hr />
+                <h3>Задачи по статусу</h3>
+                <ul>
+                    <li>
+                        <div class="status_filter_el">
+                            <div class="a">
+                                <div class="cercle1"></div>
+
+                                <a href="#">Все</a>
+                            </div> <span>100</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status_filter_el">
+                            <div class="a">
+                                <div class="cercle2"></div>
+
+                                <a href="#">Решена</a>
+                            </div> <span>100</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status_filter_el">
+                            <div class="a">
+                                <div class="cercle3"></div>
+
+                                <a href="#">Ожидает обновления</a>
+                            </div> <span>100</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status_filter_el">
+                            <div class="a">
+                                <div class="cercle4"></div>
+
+                                <a href="#">На проверке</a>
+                            </div> <span>100</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status_filter_el">
+                            <div class="a">
+                                <div class="cercle5"></div>
+
+                                <a href="#">В работе</a>
+                            </div> <span>100</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status_filter_el">
+                            <div class="a">
+                                <div class="cercle6"></div>
+
+                                <a href="#">Новая</a>
+                            </div> <span>100</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status_filter_el">
+                            <div class="a">
+                                <div class="cercle7"></div>
+
+                                <a href="#">Без статуса</a>
+                            </div> <span>100</span>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="task">
+            <div class="filter">
+                <p>Фильтры</p>
+                <div class="filter_group">
+                    <input type="text" placeholder="Организация">
+                    <input type="text" placeholder="Отдел">
+                    <input type="text" placeholder="Сотрудник">
+                </div>
+                <div>
+                    <input type="text" placeholder="Исполнитель">
+                </div>
+            </div>
+
+            <div class="tasks">
+
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="task_group">
+
+                        <div class="task_inform">
+                            <p>Тест сокрытия элемента</p>
+                        </div>
+                        <div class="task_statistic1" id="id1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task_el1">
+                    <div class="user_inform">
+                        <p>Трансполимер</p>
+                        <p>Бухгалтерия</p>
+                        <p>Галина федоровна</p>
+                        <div class="contact_inform">
+                            <div class="telephone">
+                                <p>777-77</p>
+                            </div>
+                            <div class="email">
+                                <p>abs@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_group">
+                        <div class="task_inform">
+                            <p>Надо сделать то то .Срочной!!!ывывыв</p>
+                        </div>
+                        <div class="task_statistic1">
+                            <div class="b">Ответственный:<p> Иванов И.А.</p>
+                            </div>
+                            <div class="b">Статус:<p><select>
+                                        <option> Без статуса</option>
+                                        <option> Новая</option>
+                                        <option> В работе</option>
+                                        <option> На проверке</option>
+                                        <option> Ожидает обновления</option>
+                                        <option> Решена</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Срочность:<p><select>
+                                        <option> Не срочная</option>
+                                        <option> Средней срочности</option>
+                                        <option> Срочно</option>
+                                    </select></p>
+                            </div>
+                            <div class="b">Плановое время:<p>3 часа</p>
+                            </div>
+                            <div class="b">Фактическое время:<p>1 час</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!--
+        <div class="task_el">
+                <div class="user_inform">
+                    <p>Трансполимер</p>
+                    <p>Бухгалтерия</p>
+                    <p>Галина федоровна</p>
+                    <div class="contact_inform">
+                        <div class="telephone">777-77</div>
+                        <div class="email">abs@mail.ru</div>
+                    </div>
+                </div>
+                <div class="task_statistic">
+                    <p>Ответственный: Иванов И.А.</p>
+                    <p>Новая</p>
+                    <p>Очень срочная</p>
+                    <p>Плановое время:3 часа</p>
+                    <p>Фактическое время:1 час</p>
+
+                </div>
+                <div class="task_inform">
+                    <p>Надо сделать то то .Срочной!!!</p>
+                </div>
+
+            </div>
+-->
