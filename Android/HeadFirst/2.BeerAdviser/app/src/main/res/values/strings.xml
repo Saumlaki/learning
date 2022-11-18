@@ -4,7 +4,7 @@
     <string name="brands">No beer selected</string>
     <string-array name="brands">
         <item>Светлое</item>
-        <item>Темное</item>
+        <item>Тёмное</item>
         <item>Живое</item>
         <item>Без алкогольное</item>
     </string-array>

@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private BeerExpert beerExpert = new BeerExpert();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,10 +20,14 @@ public class MainActivity extends AppCompatActivity {
     public void findBeer(View view) {
         TextView brands = (TextView) findViewById(R.id.brands);
 
-        Spinner beerColor = (Spinner)  findViewById(R.id.color);
+        Spinner beerColor = (Spinner) findViewById(R.id.color);
         String color = String.valueOf(beerColor.getSelectedItem());
+        StringBuilder sb = new StringBuilder();
+        for (String brand : beerExpert.getBrands(color)) {
 
-        brands.setText(color);
+            sb.append(brand).append('\n');
+        }
 
+        brands.setText(sb);
     }
 }
